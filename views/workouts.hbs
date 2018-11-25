@@ -1,5 +1,5 @@
 <head>
-    <title>Fitness Tracker - Workouts</title>
+    <title>Meal Planner - Workouts</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <!-- Optional theme -->
@@ -7,19 +7,19 @@
 </head>
 
 <body>
-    <h1>Workouts</h1>
+    <h1>Recipes</h1>
 
         <!-- Main menu for the user to navigate to other pages -->
-        <a href="/home">Home</a> | <b>Workouts</b> | <a href="/plans">Plan</a> | <a href="/log">Log</a>
+        <a href="/home">Home</a> | <b>Recipes</b> | <a href="/plans">Meal Plan</a> | <a href="/log">Log</a>
         <a href="/"><button type="submit">Logout</button></a>
 
         <form id="addWorkoutForm">
-        <h4>Add Exercise</h4>
+        <h4>Add Recipe</h4>
         
-        Exercise Name:
+        Recipe Name:
         <input type="text" name="exercise" id="exercise" required="required"><br>
         
-        Muscle Group Targeted:
+        {{!-- Muscle Group Targeted:
         <input type="text" name="musclegroup" id="musclegroup"><br>
         <input type="submit" name="add exercise" value="Add Exercise" id="addExerciseSubmit">
         <br><br><br>
@@ -34,13 +34,13 @@
         {{/if}}
         <option value="All">All</option>
         </select>
-        <button type="button" name="muscleGroupSearchButton" id="muscleGroupSearchButton" onclick="muscleGroupSearch()">Search</button>
+        <button type="button" name="muscleGroupSearchButton" id="muscleGroupSearchButton" onclick="muscleGroupSearch()">Search</button> --}}
 
     <table id="workoutTable">
     	<tr>
     		<th>ID</th>
-    		<th>Exercise Name</th>
-            <th>Muscle Group</th>
+    		<th>Recipe Name</th>
+            {{!-- <th>Muscle Group</th> --}}
             <th>Delete</th>
     	</tr>
     	{{#if results}}
@@ -48,7 +48,7 @@
     			<tr>
                     <td>{{this.id}}</td>
     				<td>{{this.name}}</td>
-    				<td>{{this.musclegroup}}</td>
+    				{{!-- <td>{{this.musclegroup}}</td> --}}
                     <td><input type="button" name="delete" value="Delete" onClick="deleteRow('workoutTable', {{this.id}})"></td>
                     <td><label hidden>row{{this.id}}</label></td>
     			</tr>
